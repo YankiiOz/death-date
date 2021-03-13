@@ -189,7 +189,7 @@ body {
   background-image: url(./death-date.images/background-2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: left;
+  background-position: center;
 }
 
 .forecast {
@@ -416,7 +416,7 @@ body {
   }
 
   .mystery-content {
-    max-width: 300px;
+    max-width: 280px;
   }
 
   .mystery-text {
@@ -430,15 +430,44 @@ body {
 }
 
 @media (max-width: 375px) {
+  .header-greeting {
+    padding: 0;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 300;
+  }
+
+  .question-title {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+    padding: 0;
+  }
   .photo-container::before {
     content: "";
     background-image: url(./death-date.images/media-eye-1.svg);
     position: absolute;
-    top: 199px;
+    top: 109px;
     left: 60px;
     width: 200px;
     height: 200px;
     opacity: 0.1;
+  }
+
+  .photo-container {
+    margin: 0;
+  }
+
+  .question-photo__text {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .question-buttons__button {
+    padding: 12px 80px;
+    margin-bottom: 20px;
   }
 
   .question-photo__img {
@@ -446,5 +475,71 @@ body {
     width: 137px;
     height: 137px;
     z-index: 1;
+  }
+
+  .question-buttons__prediction {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .mystery-text {
+    font-size: 20px;
+    line-height: 25px;
+    padding: 58px 20px 35px 20px;
+  }
+
+  .mystery-text::before {
+    content: "";
+    background-image: url(./death-date.images/media-hands.jpg);
+    position: absolute;
+    top: -40px;
+    left: 102px;
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+  }
+
+  .forecast-parent {
+    margin-bottom: 50px;
+  }
+
+  .forecast-text {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 400;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .test-question {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    padding-bottom: 30px;
+  }
+
+  .test-button {
+    padding: 12px 80px;
+    margin-bottom: 20px;
+  }
+
+  .test-number {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .test {
+    margin-bottom: 60px;
+  }
+
+  .ending-note {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    padding: 60px 30px 200px 30px;
+  }
+
+  .ending-container::before {
+    bottom: 125px;
   }
 }

@@ -50,6 +50,7 @@ body {
   background-image: url(./death-date.images/background-1.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   margin-bottom: 130px;
 }
 
@@ -129,6 +130,8 @@ body {
     rgba(254, 173, 53, 0.9) 100%
   );
 }
+
+
 
 .question-buttons__prediction {
   font-size: 16px;
@@ -239,6 +242,7 @@ body {
     rgba(246, 200, 102, 0.9) -6.2%,
     rgba(254, 173, 53, 0.9) 100%
   );
+  cursor: pointer;
 }
 
 .test-number {
@@ -247,6 +251,90 @@ body {
   font-weight: 300;
   opacity: 60%;
 }
+
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.date {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 50px;
+  margin-bottom: 35px;
+  padding: 20px 140px;
+}
+
+.month {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 50px;
+  margin-bottom: 35px;
+  padding: 20px 130px;
+}
+
+.test-button__smaller {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 50px;
+  margin-bottom: 35px;
+  padding: 20px 130px;
+  background: linear-gradient(
+    90deg,
+    rgba(246, 200, 102, 0.9) -6.2%,
+    rgba(254, 173, 53, 0.9) 100%
+  );
+}
+
+.test-button__small {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 50px;
+  margin-bottom: 35px;
+  padding: 20px 80px;
+  background: linear-gradient(
+    90deg,
+    rgba(246, 200, 102, 0.9) -6.2%,
+    rgba(254, 173, 53, 0.9) 100%
+  );
+}
+
+.top-row {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(253, 251, 251, 0.1);
+  margin-bottom: 30px;
+}
+
+.top-row__text {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 400;
+  font-family: "Bad Script", cursive;
+  padding: 35px 42px;
+
+}
+.question-1,
+.question-2,
+.question-3,
+.question-4,
+.question-5 {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
 
 .ending {
   position: relative;
@@ -318,6 +406,12 @@ body {
   height: 183px;
 }
 
+.footer {
+  display: none;
+}
+
+
+
 @media (max-width: 1440px) {
   .ending-container::before {
     content: "";
@@ -355,6 +449,28 @@ body {
     padding-left: 200px;
     padding-right: 200px;
   }
+
+  .footer {
+    display: block;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+    max-width: 350px;
+    overflow-x: scroll;
+
+  }
+  
+  .footer-text {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 300;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -390,6 +506,38 @@ body {
     padding-right: 0px;
   }
 
+  .photo-container::before {
+    left: 34px;
+  }
+
+  .question-photo__text {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 400;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .mystery-text {
+    font-size: 20px;
+    line-height: 25px;
+    padding: 58px 20px 35px 20px;
+  }
+  .mystery-content {
+    max-width: 280px;
+  }
+
+  .mystery-text::before {
+    content: "";
+    background-image: url(./death-date.images/media-hands.jpg);
+    position: absolute;
+    top: -40px;
+    left: 102px;
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+  }
+
   .ending-container {
     padding-left: 0px;
     padding-right: 0px;
@@ -415,18 +563,7 @@ body {
     height: 64px;
   }
 
-  .mystery-content {
-    max-width: 280px;
-  }
-
-  .mystery-text {
-    font-size: 20px;
-    padding: 128px 20px 84px 20px;
-  }
-
-  .mystery-text::before {
-    left: 82px;
-  }
+  
 }
 
 @media (max-width: 375px) {
@@ -448,7 +585,7 @@ body {
     background-image: url(./death-date.images/media-eye-1.svg);
     position: absolute;
     top: 109px;
-    left: 60px;
+    left: 14px;
     width: 200px;
     height: 200px;
     opacity: 0.1;
@@ -463,6 +600,8 @@ body {
     line-height: 25px;
     font-weight: 400;
     margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .question-buttons__button {
@@ -537,9 +676,23 @@ body {
     line-height: 28px;
     font-weight: 400;
     padding: 60px 30px 200px 30px;
+    margin-bottom: 0;
   }
 
   .ending-container::before {
     bottom: 125px;
+  }
+}
+
+@media (max-width: 320px) {
+  .photo-container::before {
+    content: "";
+    background-image: url(./death-date.images/media-eye-1.svg);
+    position: absolute;
+    top: 109px;
+    left: 60px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.1;
   }
 }

@@ -7,6 +7,7 @@ let blockFourth = document.querySelector(".question-4");
 let blockFifth = document.querySelector(".question-5");
 let question = document.querySelector(".question");
 let message = document.querySelector(".recording-message");
+let call = document.querySelector(".call-listen")
 
 
 for(let i=0;i<buttons.length; i++) {
@@ -26,7 +27,8 @@ for(let i=0;i<buttons.length; i++) {
         } else if(blockFifth.classList.contains("block")) {
             blockFifth.classList.remove("block");
             message.classList.add("block");
-        }
+        } 
+        
     }
 }
 
@@ -38,7 +40,9 @@ function progress () {
 
     function progressStatus () {
         if(width>=100) {
-            clearInterval(id)
+            clearInterval(id);
+            /* message.classList.remove("block");
+            call.classList.add("block"); */
         } else {
             width++;
             elem.style.width = width +"%";

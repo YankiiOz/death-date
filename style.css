@@ -52,8 +52,45 @@ body {
   background-size: cover;
   background-position: center;
   margin-bottom: 130px;
+  
 }
 
+/* section {
+  transition: 1s; 
+animation: show 5s 1; 
+animation-fill-mode: forwards; 
+animation-delay: 1.5s; 
+opacity: 0;
+}
+
+@keyframes show{
+
+  0%{
+  
+  opacity:0%;
+  
+  }
+
+  25% {
+    opacity: 25%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+  
+  100% {
+  
+  opacity:100%;
+  
+  }
+  
+  }
+ */
 .question-photo {
   display: flex;
   flex-direction: column;
@@ -116,7 +153,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
 }
 
 .question-buttons__button {
@@ -129,7 +166,18 @@ body {
     rgba(246, 200, 102, 0.9) -6.2%,
     rgba(254, 173, 53, 0.9) 100%
   );
+  animation: gradient 5s infinite alternate;
 }
+
+@keyframes gradient {
+ 
+
+  50% {
+    background: linear-gradient(248.67deg, rgba(255, 255, 255, 0) 30.84%, rgba(255, 255, 255, 0.29) 46.06%, rgba(255, 255, 255, 0) 64.04%);
+  }
+  
+}
+
 
 
 
@@ -143,6 +191,16 @@ body {
 
 .mystery {
   margin-bottom: 75px;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 .mystery-content {
   display: flex;
@@ -315,6 +373,67 @@ body {
   margin-bottom: 30px;
 }
 
+.top-row__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(253, 251, 251, 0.1);
+  margin-bottom: 30px;
+}
+
+.top-row-1 {
+  background-image: url(./death-date.images/cloud.svg);
+  width: 259px;
+  height: 94px;
+  
+}
+
+.top-row-2 {
+  background-image: url(./death-date.images/cloud.svg);
+  width: 259px;
+  height: 94px;
+}
+
+.top-row-3 {
+  background-image: url(./death-date.images/cloud.svg);
+  width: 259px;
+  height: 94px;
+}
+
+.top-row-1,
+.top-row-2 {
+  display: none;
+}
+
+.top-row__text-1 {
+  color: #000;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  font-family: "Bad Script", cursive;
+  padding: 5px;
+}
+
+.top-row__text-2 {
+  color: #000;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  font-family: "Bad Script", cursive;
+  padding: 0;
+}
+
+.top-row__text-3 {
+  color: #000;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  font-family: "Bad Script", cursive;
+  padding: 0 5px;
+}
+
 .top-row__text {
   font-size: 20px;
   line-height: 25px;
@@ -323,11 +442,16 @@ body {
   padding: 35px 42px;
 
 }
+
+.recording-message {
+  margin-top: 200px;
+}
 .question-1,
 .question-2,
 .question-3,
 .question-4,
-.question-5 {
+.question-5,
+.recording-message {
   display: none;
 }
 
@@ -335,6 +459,83 @@ body {
   display: block;
 }
 
+.bottom-line {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  height: 4px;
+  position: relative;
+}
+
+.upper-line {
+  width: 10%;
+  height: 4px;
+  background-color: #F6C866;
+  border-radius: 5px;
+}
+
+.upper-line::before {
+  content: "";
+  background-image: url(./death-date.images/microphone.svg);
+  position: absolute;
+  width: 147px;
+  height: 69px;
+  bottom: 50px;
+  left: 156px;
+}
+
+.pop-up {
+  background-image: url(./death-date.images/cloud.svg);
+  width: 259px;
+  height: 94px;
+  margin-bottom: 30px;
+}
+
+.pop-up__text {
+  color: #000;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 5px;
+}
+
+.event-top__text {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.inner-event {
+  border: 1px solid#fff;
+  margin-bottom: 30px;
+}
+
+.inner-event__text {
+  color: #F6C866;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 400;
+  padding: 15px 15px 10px 15px;
+}
+
+.event-bottom__text {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.event-uppercase {
+  text-transform: uppercase;
+}
+
+.event-button {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 50px;
+  margin-bottom: 35px;
+  padding: 20px 50px;
+  background: linear-gradient(90deg, rgba(76, 217, 100, 0.9) -6.2%, rgba(50, 185, 73, 0.9) 100%);
+}
 
 .ending {
   position: relative;

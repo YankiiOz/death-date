@@ -4,7 +4,10 @@ let blockFirst = document.querySelector(".question-1");
 let blockSecond = document.querySelector(".question-2");
 let blockThird = document.querySelector(".question-3");
 let blockFourth = document.querySelector(".question-4");
-let blockFifth = document.querySelector(".question-5")
+let blockFifth = document.querySelector(".question-5");
+let question = document.querySelector(".question");
+let message = document.querySelector(".recording-message");
+
 
 for(let i=0;i<buttons.length; i++) {
     buttons[i].onclick = function() {
@@ -20,7 +23,10 @@ for(let i=0;i<buttons.length; i++) {
         } else if(blockFourth.classList.contains("block")) {
             blockFourth.classList.remove("block");
             blockFifth.classList.add("block");
-        };
+        } else if(blockFifth.classList.contains("block")) {
+            blockFifth.classList.remove("block");
+            message.classList.add("block");
+        }
     }
 }
 
@@ -42,3 +48,21 @@ function progress () {
 }
 
 progress();
+
+
+
+let date = document.querySelector(".date");
+const dates = []
+dates.forEach(function (date) {
+dates.push(date);
+})
+
+
+function get_current_age() {
+    let age = dates.split('.');
+    if( typeof age[2] !== "undefined" ) {
+        let dob = age[2]+'.'+age[1]+'.'+age[0];
+        return ((new Date().getTime() - new Date(dob)) / (24 * 3600 * 365.25 * 1000)) | 0;
+    }
+    return dob;
+} 

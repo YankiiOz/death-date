@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
@@ -12,7 +14,7 @@
 <body>
 
     <main class="content">
-        <section class="question">
+        <section class="question wow animate__animated animate__fadeInDown" data-wow-duration="2s">
             <div class="header">
                 <p class="header-greeting">Лучшие астрологи и экстрасенсы Румынии</p>
             </div>
@@ -33,7 +35,7 @@
             </div>
         </section>
 
-        <section class="mystery">
+        <section class="mystery wow animate__animated animate__fadeInUp" data-wow-duration="2s">
             <div class="container">
                 <div class="mystery-content">
             <p class="mystery-text">Позвольте нам раскрыть эту волнующую тайну и <br>
@@ -42,7 +44,7 @@
             </div>
         </section>
 
-        <section class="forecast-parent">
+        <section class="forecast-parent wow animate__animated animate__fadeInUp" data-wow-duration="2s">
         <div class="forecast-container">
         <div class="forecast">
                 <div class="forecast-content">
@@ -53,7 +55,7 @@
     </div>
 </section>
 
-        <section class="test">
+        <section class="test wow animate__animated animate__fadeInUp" data-wow-duration="2s">
             <div class="question-1 block">
             <div class="container">
                 <h2 class="test-question">Боитесь ли вы умереть?</h2>
@@ -85,10 +87,11 @@
                 <div class="container">
                     <div class="question-block">
                         <h2 class="test-question">Укажите свою дату рождения:</h2>
-                        <div class="select-container">
-                        <select class="date" name="day" id="day">
+                        <form action="index.js" method="GET" id="date" class="select-container">
+                            <div class="arrow-container">
+                        <select class="date" form="date" name="day" id="day" required>
                             <option value="0">День</option>
-                            <option value="1">01</option>
+                            <option value="1" selected>01</option>
                             <option value="2">02</option>
                             <option value="3">03</option>
                             <option value="4">04</option>
@@ -120,26 +123,30 @@
                             <option value="30">30</option>
                             <option value="31">31</option>
                         </select>
+                        </div>
 
-                        <select name="month" id="month" class="month date">
+                        <div class="arrow-container-1">
+                        <select name="month" id="month" form="date" class="month date" required>
                             <option value="0">Месяц</option>
-                            <option value="1">Январь</option>
-                            <option value="2">Февраль</option>
-                            <option value="3">Март</option>
-                            <option value="4">Апрель</option>
-                            <option value="5">Май</option>
-                            <option value="6">Июнь</option>
-                            <option value="7">Июль</option>
-                            <option value="8">Август</option>
-                            <option value="9">Сентябрь</option>
+                            <option value="01" selected>Январь</option>
+                            <option value="02">Февраль</option>
+                            <option value="03">Март</option>
+                            <option value="04">Апрель</option>
+                            <option value="05">Май</option>
+                            <option value="06">Июнь</option>
+                            <option value="07">Июль</option>
+                            <option value="08">Август</option>
+                            <option value="09">Сентябрь</option>
                             <option value="10">Октябрь</option>
                             <option value="11">Ноябрь</option>
                             <option value="12">Декабрь</option>
                         </select>
+                        </div>
 
-                        <select name="year" id="year" class="date">
+                        <div class="arrow-container-2">
+                        <select name="year" id="year" form="date" class="date" required>
                             <option value="0">Год</option>
-                            <option value="1">1960</option>
+                            <option value="1" selected>1960</option>
                             <option value="2">1961</option>
                             <option value="3">1962</option>
                             <option value="4">1963</option>
@@ -191,6 +198,7 @@
                             <option value="50">2009</option>
                         </select>
                     </div>
+                    </form>
 
                         <button class="test-button" type="button">Далее</button>
                         <p class="test-number">Вопрос 3-5</p>
@@ -230,8 +238,8 @@
                     
                     <div class="question-block">
                         <h2 class="test-question">Запись, которую Вы услышите, может шокировать людей с неокрепшей психикой. Вы готовы узнать, что ждет именно Вас?</h2>
-                        <button class="test-button" type="button">Да</button>
-                        <button class="test-button test-button__small" type="button">Затрудняюсь ответить</button>
+                        <button class="test-button listener" type="button">Да</button>
+                        <button class="test-button test-button__small listener" type="button">Затрудняюсь ответить</button>
                         <p class="test-number">Вопрос 5-5</p>
                     </div>
 
@@ -250,7 +258,7 @@
             </div>
 
             <div class="call-listen">
-                <div class="container">
+                <div class="call-container">
                     <div class="pop-up">
                         <p class="pop-up__text">Спасибо за Ваши ответы! <br>
                            <b>Мы подготовили для Вас персональную аудио запись с Вашим прогнозом.</b> 
@@ -272,7 +280,7 @@
             </div>
         </section>
 
-        <section class="ending">
+        <section class="ending wow animate__animated animate__fadeInUp" data-wow-duration="2s">
             <div class="ending-container">
                 <div class="ending-indents">
                 <p class="ending-note">Вы, конечно, умрете. 
@@ -292,5 +300,10 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="index.js"></script>
+    <script src="wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 </html>

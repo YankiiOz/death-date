@@ -55,42 +55,6 @@ body {
   
 }
 
-/* section {
-  transition: 1s; 
-animation: show 5s 1; 
-animation-fill-mode: forwards; 
-animation-delay: 1.5s; 
-opacity: 0;
-}
-
-@keyframes show{
-
-  0%{
-  
-  opacity:0%;
-  
-  }
-
-  25% {
-    opacity: 25%;
-  }
-
-  50% {
-    opacity: 50%;
-  }
-
-  75% {
-    opacity: 75%;
-  }
-  
-  100% {
-  
-  opacity:100%;
-  
-  }
-  
-  }
- */
 .question-photo {
   display: flex;
   flex-direction: column;
@@ -161,22 +125,36 @@ opacity: 0;
   border-radius: 50px;
   margin-bottom: 35px;
   padding: 20px 140px;
-  background: linear-gradient(
-    90deg,
-    rgba(246, 200, 102, 0.9) -6.2%,
-    rgba(254, 173, 53, 0.9) 100%
-  );
-  animation: gradient 5s infinite alternate;
+  background: linear-gradient(90deg, rgba(246, 200, 102, 0.9) -6.2%, rgba(254, 173, 53, 0.9) 100%);
+  overflow: hidden;
+  position: relative;
 }
 
-@keyframes gradient {
- 
-
-  50% {
-    background: linear-gradient(248.67deg, rgba(255, 255, 255, 0) 30.84%, rgba(255, 255, 255, 0.29) 46.06%, rgba(255, 255, 255, 0) 64.04%);
-  }
+.question-buttons__button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+  animation: sheen 3s infinite;
+}
   
+@keyframes sheen {
+  100% {
+    transform: rotateZ(60deg) translate(1em, -9em);
+  }
 }
+
+/* .question-buttons__button:hover:after {
+    left: 120%;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  
+} */
+
+
 
 
 
@@ -278,8 +256,10 @@ opacity: 0;
 }
 
 .test {
-  margin-bottom: 80px;
+  margin-bottom: 130px;
 }
+
+
 
 .test-question {
   font-size: 25px;
@@ -301,6 +281,31 @@ opacity: 0;
     rgba(254, 173, 53, 0.9) 100%
   );
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.test-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+  animation: sheen 3s infinite;
+}
+  
+
+
+
+.question-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
 }
 
 .test-number {
@@ -310,6 +315,15 @@ opacity: 0;
   opacity: 60%;
 }
 
+.test-number::before {
+  content: "";
+  background-image: url(./death-date.images/moon-2.svg);
+  position: absolute;
+  bottom: 0;
+  left: -75px;
+  width: 91px;
+  height: 92px;
+}
 
 .select-container {
   display: flex;
@@ -320,6 +334,7 @@ opacity: 0;
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
+  position: relative;
 }
 
 .date {
@@ -329,6 +344,40 @@ opacity: 0;
   margin-bottom: 35px;
   padding: 20px 140px;
 }
+
+select {
+  appearance: none;
+}
+.arrow-container:after {
+  content: "";
+  background-image: url(./death-date.images/select-arrow.svg);
+  width: 13px;
+  height: 5px;
+  position: absolute;
+  right: 72px;
+  top: 27px;
+}
+
+.arrow-container-1:after {
+  content: "";
+  background-image: url(./death-date.images/select-arrow.svg);
+  width: 13px;
+  height: 5px;
+  position: absolute;
+  right: 72px;
+  top: 115px;
+}
+
+.arrow-container-2:after {
+  content: "";
+  background-image: url(./death-date.images/select-arrow.svg);
+  width: 13px;
+  height: 5px;
+  position: absolute;
+  right: 72px;
+  top: 205px;
+}
+
 
 .month {
   margin-bottom: 30px;
@@ -371,6 +420,7 @@ opacity: 0;
   justify-content: center;
   border-bottom: 1px solid rgba(253, 251, 251, 0.1);
   margin-bottom: 30px;
+  position: relative;
 }
 
 .top-row__container {
@@ -402,8 +452,8 @@ opacity: 0;
   height: 94px;
 }
 
-.top-row-1,
-.top-row-2 {
+.top-row-2,
+.top-row-3 {
   display: none;
 }
 
@@ -440,8 +490,20 @@ opacity: 0;
   font-weight: 400;
   font-family: "Bad Script", cursive;
   padding: 35px 42px;
-
+  max-width: 500px;
 }
+
+.top-row__text::before {
+  content: "";
+  background-image: url(./death-date.images/eye-3.svg);
+  position: absolute;
+  right: 610px;
+  bottom: 15px;
+  width: 164px;
+  height: 89px;
+}
+
+
 
 .recording-message {
   margin-top: 200px;
@@ -451,8 +513,19 @@ opacity: 0;
 .question-3,
 .question-4,
 .question-5,
-.recording-message {
+.recording-message,
+.call-listen {
   display: none;
+}
+
+.call-container {
+  padding-left: 600px;
+  padding-right: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .block {
@@ -534,8 +607,24 @@ opacity: 0;
   border-radius: 50px;
   margin-bottom: 35px;
   padding: 20px 50px;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
   background: linear-gradient(90deg, rgba(76, 217, 100, 0.9) -6.2%, rgba(50, 185, 73, 0.9) 100%);
 }
+
+.event-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+  animation: sheen 3s infinite;
+}
+
 
 .ending {
   position: relative;
@@ -611,9 +700,28 @@ opacity: 0;
   display: none;
 }
 
+.footer-text {
+  color: #9D9D9D;
+}
 
 
 @media (max-width: 1440px) {
+
+  .top-row__text::before {
+    content: "";
+    background-image: url(./death-date.images/eye-3.svg);
+    position: absolute;
+    right: 390px;
+    bottom: 5px;
+    width: 164px;
+    height: 89px;
+  }
+
+  .call-container {
+    padding-left: 400px;
+    padding-right: 400px;
+  }
+
   .ending-container::before {
     content: "";
     background-image: url(./death-date.images/moon.svg);
@@ -646,6 +754,15 @@ opacity: 0;
     padding-right: 200px;
   }
 
+  .test-number {
+    margin-top: 100px;
+  }
+
+  .call-container {
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+
   .ending-container {
     padding-left: 200px;
     padding-right: 200px;
@@ -671,6 +788,7 @@ opacity: 0;
     font-weight: 300;
     padding-left: 20px;
     padding-right: 20px;
+
   }
 }
 
@@ -683,6 +801,11 @@ opacity: 0;
   .container {
     padding-left: 100px;
     padding-right: 100px;
+  }
+
+  .call-container {
+    padding-left: 150px;
+    padding-right: 150px;
   }
 
   .ending-container {
@@ -712,16 +835,17 @@ opacity: 0;
   }
 
   .question-photo__text {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 25px;
     font-weight: 400;
     margin: 0;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .mystery-text {
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 18px;
+    line-height: 24px;
     padding: 58px 20px 35px 20px;
   }
   .mystery-content {
@@ -739,9 +863,141 @@ opacity: 0;
     border-radius: 50%;
   }
 
+  .forecast-text {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .top-row__text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .test-button {
+    padding: 12px 80px;
+    margin-bottom: 20px;
+  }
+
+  .test-button__smaller {
+    padding: 12px 70px;
+  }
+
+  .test-button__small {
+    padding: 12px 21px;
+  }
+  .test-question {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    padding-bottom: 30px;
+  }
+
+  .top-row__text::before {
+    content: "";
+    background-image: url(./death-date.images/eye-4.svg);
+    position: absolute;
+    right: 0px;
+    bottom: 5px;
+    width: 62px;
+    height: 59px;
+  }
+
+  .test-number::before {
+    content: "";
+    background-image: url(./death-date.images/moon-3.svg);
+    position: absolute;
+    bottom: 24px;
+    left: -90px;
+    width: 42px;
+    height: 52px;
+  }
+
+  .date {
+    padding: 12px 80px;
+  }
+
+  .month {
+    padding: 12px 66px;
+  }
+
+  .arrow-container:after {
+    content: "";
+    background-image: url(./death-date.images/select-arrow.svg);
+    width: 13px;
+    height: 5px;
+    position: absolute;
+    right: 14px;
+    top: 19px;
+  }
+  
+  .arrow-container-1:after {
+    content: "";
+    background-image: url(./death-date.images/select-arrow.svg);
+    width: 13px;
+    height: 5px;
+    position: absolute;
+    right: 14px;
+    top: 92px;
+  }
+  
+  .arrow-container-2:after {
+    content: "";
+    background-image: url(./death-date.images/select-arrow.svg);
+    width: 13px;
+    height: 5px;
+    position: absolute;
+    right: 14px;
+    top: 167px;
+  }
+
+  .call-container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .event-top__text,
+  .event-bottom__text {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 300;
+  }
+
+  .event-button {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #fff;
+    padding: 20px 38px;
+  }
+
+  .inner-event__text {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 700;
+  }
+
+  .bottom-line {
+    width: 80%;
+  }
+
+  .upper-line::before {
+    left: 92px;
+  }
+
   .ending-container {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  
+  .ending-note {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 400;
+    padding: 60px 30px 200px 30px;
+    margin-bottom: 0;
   }
 
   .ending-container::before {
@@ -796,14 +1052,7 @@ opacity: 0;
     margin: 0;
   }
 
-  .question-photo__text {
-    font-size: 16px;
-    line-height: 25px;
-    font-weight: 400;
-    margin: 0;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+ 
 
   .question-buttons__button {
     padding: 12px 80px;
@@ -822,11 +1071,7 @@ opacity: 0;
     line-height: 14px;
   }
 
-  .mystery-text {
-    font-size: 20px;
-    line-height: 25px;
-    padding: 58px 20px 35px 20px;
-  }
+  
 
   .mystery-text::before {
     content: "";
@@ -843,25 +1088,11 @@ opacity: 0;
     margin-bottom: 50px;
   }
 
-  .forecast-text {
-    font-size: 20px;
-    line-height: 25px;
-    font-weight: 400;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
+ 
 
-  .test-question {
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: 400;
-    padding-bottom: 30px;
-  }
+  
 
-  .test-button {
-    padding: 12px 80px;
-    margin-bottom: 20px;
-  }
+  
 
   .test-number {
     font-size: 12px;
@@ -872,13 +1103,13 @@ opacity: 0;
     margin-bottom: 60px;
   }
 
-  .ending-note {
-    font-size: 20px;
-    line-height: 28px;
-    font-weight: 400;
-    padding: 60px 30px 200px 30px;
-    margin-bottom: 0;
+  .call-container {
+    padding-left: 40px;
+    padding-right: 40px;
   }
+
+ 
+
 
   .ending-container::before {
     bottom: 125px;
@@ -895,5 +1126,13 @@ opacity: 0;
     width: 200px;
     height: 200px;
     opacity: 0.1;
+  }
+
+  .test-number::before {
+    left: -44px;
+  }
+
+  .upper-line::before {
+    left: 55px;
   }
 }

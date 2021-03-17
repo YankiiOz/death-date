@@ -7,7 +7,7 @@ let blockFourth = document.querySelector(".question-4");
 let blockFifth = document.querySelector(".question-5");
 let question = document.querySelector(".question");
 let message = document.querySelector(".recording-message");
-let call = document.querySelector(".call-listen")
+let call = document.querySelector(".call-listen");
 
 
 for(let i=0;i<buttons.length; i++) {
@@ -28,11 +28,9 @@ for(let i=0;i<buttons.length; i++) {
             blockFifth.classList.remove("block");
             message.classList.add("block");
         } 
-        
-    }
-}
 
-function progress () {
+        
+    function progress () {
     let elem = document.getElementById("upper");
     let percent = document.querySelector(".recording-message__percent");
     width = 0;
@@ -41,8 +39,8 @@ function progress () {
     function progressStatus () {
         if(width>=100) {
             clearInterval(id);
-            /* message.classList.remove("block");
-            call.classList.add("block"); */
+            message.classList.remove("block");
+            call.classList.add("block"); 
         } else {
             width++;
             elem.style.width = width +"%";
@@ -52,21 +50,53 @@ function progress () {
 }
 
 progress();
-
-
-
-let date = document.querySelector(".date");
-const dates = []
-dates.forEach(function (date) {
-dates.push(date);
-})
-
-
-function get_current_age() {
-    let age = dates.split('.');
-    if( typeof age[2] !== "undefined" ) {
-        let dob = age[2]+'.'+age[1]+'.'+age[0];
-        return ((new Date().getTime() - new Date(dob)) / (24 * 3600 * 365.25 * 1000)) | 0;
     }
-    return dob;
-} 
+}
+
+
+
+
+
+let day = document.querySelector(".day");
+let month = document.querySelector(".month");
+let year = document.querySelector(".year");
+
+/* const dates = [];
+dates.push(day.options[day.selectedIndex].text + '.' + month.options[month.selectedIndex].value + '.' + year.options[year.selectedIndex].text);
+dates.toNumber(); */
+
+function calculate_age(day, month, year)
+{
+    let today_date = new Date();
+    let today_year = today_date.getFullYear();
+    let today_month = today_date.getMonth();
+    let today_day = today_date.getDate();
+    let age = today_year - year;
+
+    if ( today_month < (month - 1))
+    {
+        age--;
+    }
+    if (((month - 1) == today_month) && (today_day < day))
+    {
+        age--;
+    }
+    console.log(today_date);
+}
+
+
+
+
+/* let young = document.querySelector(".top-row__text-1");
+let medium = document.querySelector(".top-row__text-2");
+let old = document.querySelector(".top-row__text-3");
+
+if(age >= 18 && age <= 45) {
+    young.classList.add("block");
+} else if(age >= 36 && age <= 45) {
+    young.classList.remove("block");
+    medium.classList.add("block");
+} else if (age >46) {
+    medium.classList.remove("block");
+    old.classList.add("block");
+} */

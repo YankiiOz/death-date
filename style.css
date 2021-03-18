@@ -17,6 +17,13 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
 .container {
   padding-left: 380px;
   padding-right: 380px;
@@ -52,7 +59,6 @@ body {
   background-size: cover;
   background-position: center;
   margin-bottom: 130px;
-  
 }
 
 .question-photo {
@@ -117,7 +123,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 .question-buttons__button {
@@ -125,23 +131,32 @@ body {
   border-radius: 50px;
   margin-bottom: 35px;
   padding: 20px 140px;
-  background: linear-gradient(90deg, rgba(246, 200, 102, 0.9) -6.2%, rgba(254, 173, 53, 0.9) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(246, 200, 102, 0.9) -6.2%,
+    rgba(254, 173, 53, 0.9) 100%
+  );
   overflow: hidden;
   position: relative;
 }
 
 .question-buttons__button::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   right: -50%;
   bottom: -50%;
   left: -50%;
-  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  background: linear-gradient(
+    to bottom,
+    rgba(229, 172, 142, 0),
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(229, 172, 142, 0)
+  );
   transform: rotateZ(60deg) translate(-5em, 7.5em);
   animation: sheen 3s infinite;
 }
-  
+
 @keyframes sheen {
   100% {
     transform: rotateZ(60deg) translate(1em, -9em);
@@ -153,11 +168,6 @@ body {
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
   
 } */
-
-
-
-
-
 
 .question-buttons__prediction {
   font-size: 16px;
@@ -259,8 +269,6 @@ body {
   margin-bottom: 130px;
 }
 
-
-
 .test-question {
   font-size: 25px;
   line-height: 30px;
@@ -285,19 +293,21 @@ body {
   position: relative;
 }
 .test-button::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   right: -50%;
   bottom: -50%;
   left: -50%;
-  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  background: linear-gradient(
+    to bottom,
+    rgba(229, 172, 142, 0),
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(229, 172, 142, 0)
+  );
   transform: rotateZ(60deg) translate(-5em, 7.5em);
   animation: sheen 3s infinite;
 }
-  
-
-
 
 .question-block {
   display: flex;
@@ -337,7 +347,7 @@ body {
   position: relative;
 }
 
-.date {
+.day {
   margin-bottom: 30px;
   border: none;
   border-radius: 50px;
@@ -354,7 +364,7 @@ select {
   width: 13px;
   height: 5px;
   position: absolute;
-  right: 72px;
+  right: 24px;
   top: 27px;
 }
 
@@ -364,7 +374,7 @@ select {
   width: 13px;
   height: 5px;
   position: absolute;
-  right: 72px;
+  right: 24px;
   top: 115px;
 }
 
@@ -374,10 +384,9 @@ select {
   width: 13px;
   height: 5px;
   position: absolute;
-  right: 72px;
+  right: 24px;
   top: 205px;
 }
-
 
 .month {
   margin-bottom: 30px;
@@ -385,6 +394,14 @@ select {
   border-radius: 50px;
   margin-bottom: 35px;
   padding: 20px 130px;
+}
+
+.year {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 50px;
+  margin-bottom: 35px;
+  padding: 20px 145px;
 }
 
 .test-button__smaller {
@@ -437,7 +454,6 @@ select {
   background-image: url(./death-date.images/cloud.svg);
   width: 259px;
   height: 94px;
-  
 }
 
 .top-row-2 {
@@ -450,11 +466,6 @@ select {
   background-image: url(./death-date.images/cloud.svg);
   width: 259px;
   height: 94px;
-}
-
-.top-row-2,
-.top-row-3 {
-  display: none;
 }
 
 .top-row__text-1 {
@@ -503,8 +514,6 @@ select {
   height: 89px;
 }
 
-
-
 .recording-message {
   margin-top: 200px;
 }
@@ -514,7 +523,10 @@ select {
 .question-4,
 .question-5,
 .recording-message,
-.call-listen {
+.call-listen,
+.top-row-1,
+.top-row-2,
+.top-row-3 {
   display: none;
 }
 
@@ -543,7 +555,7 @@ select {
 .upper-line {
   width: 10%;
   height: 4px;
-  background-color: #F6C866;
+  background-color: #f6c866;
   border-radius: 5px;
 }
 
@@ -554,7 +566,7 @@ select {
   width: 147px;
   height: 69px;
   bottom: 50px;
-  left: 156px;
+  left: 505px;
 }
 
 .pop-up {
@@ -584,7 +596,7 @@ select {
 }
 
 .inner-event__text {
-  color: #F6C866;
+  color: #f6c866;
   font-size: 20px;
   line-height: 25px;
   font-weight: 400;
@@ -610,21 +622,29 @@ select {
   color: #fff;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(90deg, rgba(76, 217, 100, 0.9) -6.2%, rgba(50, 185, 73, 0.9) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(76, 217, 100, 0.9) -6.2%,
+    rgba(50, 185, 73, 0.9) 100%
+  );
 }
 
 .event-button::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   right: -50%;
   bottom: -50%;
   left: -50%;
-  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  background: linear-gradient(
+    to bottom,
+    rgba(229, 172, 142, 0),
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(229, 172, 142, 0)
+  );
   transform: rotateZ(60deg) translate(-5em, 7.5em);
   animation: sheen 3s infinite;
 }
-
 
 .ending {
   position: relative;
@@ -701,12 +721,10 @@ select {
 }
 
 .footer-text {
-  color: #9D9D9D;
+  color: #9d9d9d;
 }
 
-
 @media (max-width: 1440px) {
-
   .top-row__text::before {
     content: "";
     background-image: url(./death-date.images/eye-3.svg);
@@ -715,6 +733,10 @@ select {
     bottom: 5px;
     width: 164px;
     height: 89px;
+  }
+
+  .upper-line::before {
+    left: 264px;
   }
 
   .call-container {
@@ -743,6 +765,52 @@ select {
   }
 }
 
+@media (max-width: 1200px) {
+  .upper-line::before {
+    left: 145px;
+  }
+
+  .call-container {
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+
+  .top-row__text::before {
+    right: 272px;
+  }
+
+  .ending-container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .forecast-content {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+    max-width: 350px;
+    overflow-x: scroll;
+  }
+
+  .footer-text {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 300;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 @media (max-width: 1024px) {
   .header {
     padding-left: 200px;
@@ -758,37 +826,16 @@ select {
     margin-top: 100px;
   }
 
-  .call-container {
-    padding-left: 300px;
-    padding-right: 300px;
+  .top-row__text::before {
+    right: 215px;
   }
 
-  .ending-container {
-    padding-left: 200px;
-    padding-right: 200px;
+  .test-number::before {
+    bottom: 36px;
   }
 
-  .footer {
-    display: block;
-  }
-
-  .footer-container {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    height: 50px;
-    max-width: 350px;
-    overflow-x: scroll;
-
-  }
-  
-  .footer-text {
-    font-size: 12px;
-    line-height: 18px;
-    font-weight: 300;
-    padding-left: 20px;
-    padding-right: 20px;
-
+  .upper-line::before {
+    left: 236px;
   }
 }
 
@@ -803,19 +850,22 @@ select {
     padding-right: 100px;
   }
 
+  .top-row__text::before {
+    right: 70px;
+  }
+
+  .test-number::before {
+    left: 11px;
+    bottom: 36px;
+  }
+
+  .upper-line::before {
+    left: 210px;
+  }
+
   .call-container {
     padding-left: 150px;
     padding-right: 150px;
-  }
-
-  .ending-container {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-
-  .forecast-content {
-    margin-top: 80px;
-    margin-bottom: 80px;
   }
 }
 
@@ -914,7 +964,7 @@ select {
     height: 52px;
   }
 
-  .date {
+  .day {
     padding: 12px 80px;
   }
 
@@ -931,7 +981,7 @@ select {
     right: 14px;
     top: 19px;
   }
-  
+
   .arrow-container-1:after {
     content: "";
     background-image: url(./death-date.images/select-arrow.svg);
@@ -941,7 +991,7 @@ select {
     right: 14px;
     top: 92px;
   }
-  
+
   .arrow-container-2:after {
     content: "";
     background-image: url(./death-date.images/select-arrow.svg);
@@ -952,6 +1002,9 @@ select {
     top: 167px;
   }
 
+  .year {
+    padding: 12px 82px;
+  }
   .call-container {
     padding-left: 60px;
     padding-right: 60px;
@@ -991,7 +1044,6 @@ select {
     padding-right: 0px;
   }
 
-  
   .ending-note {
     font-size: 18px;
     line-height: 25px;
@@ -1019,11 +1071,9 @@ select {
     width: 60px;
     height: 64px;
   }
-
-  
 }
 
-@media (max-width: 375px) {
+@media (max-width: 376px) {
   .header-greeting {
     padding: 0;
     font-size: 12px;
@@ -1042,7 +1092,7 @@ select {
     background-image: url(./death-date.images/media-eye-1.svg);
     position: absolute;
     top: 109px;
-    left: 14px;
+    left: 87px;
     width: 200px;
     height: 200px;
     opacity: 0.1;
@@ -1051,8 +1101,6 @@ select {
   .photo-container {
     margin: 0;
   }
-
- 
 
   .question-buttons__button {
     padding: 12px 80px;
@@ -1071,8 +1119,6 @@ select {
     line-height: 14px;
   }
 
-  
-
   .mystery-text::before {
     content: "";
     background-image: url(./death-date.images/media-hands.jpg);
@@ -1088,11 +1134,10 @@ select {
     margin-bottom: 50px;
   }
 
- 
-
-  
-
-  
+  .test-question {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 
   .test-number {
     font-size: 12px;
@@ -1108,8 +1153,9 @@ select {
     padding-right: 40px;
   }
 
- 
-
+  .upper-line::before {
+    left: 75px;
+  }
 
   .ending-container::before {
     bottom: 125px;
@@ -1129,7 +1175,7 @@ select {
   }
 
   .test-number::before {
-    left: -44px;
+    left: -13px;
   }
 
   .upper-line::before {

@@ -10,6 +10,8 @@ let message = document.querySelector(".recording-message");
 let call = document.querySelector(".call-listen");
 
 
+
+
 for(let i=0;i<buttons.length; i++) {
     buttons[i].onclick = function() {
         if(blockFirst.classList.contains("block")) {
@@ -30,6 +32,7 @@ for(let i=0;i<buttons.length; i++) {
         } 
 
         
+
     function progress () {
     let elem = document.getElementById("upper");
     let percent = document.querySelector(".recording-message__percent");
@@ -51,52 +54,51 @@ for(let i=0;i<buttons.length; i++) {
 
 progress();
     }
-}
+};
 
+let field = document.querySelector("select");
 
+field.onchange = function() {
+let young = document.querySelector(".top-row-1");
+let medium = document.querySelector(".top-row-2");
+let old = document.querySelector(".top-row-3");
+let day = document.querySelector(".date").value;
+let month = document.querySelector(".month").value;
+let year = document.querySelector(".year").value;
+    
+day = Number(day);
+month = Number(month);
+year = Number(year);
 
+    function calculateAge(day, month, year) {
+    let todayDate = new Date();
+    let todayYear = todayDate.getFullYear();
+    let todayMonth = todayDate.getMonth();
+    let todayDay = todayDate.getDate();
+    let age = todayYear - year;
 
-
-let day = document.querySelector(".day");
-let month = document.querySelector(".month");
-let year = document.querySelector(".year");
-
-/* const dates = [];
-dates.push(day.options[day.selectedIndex].text + '.' + month.options[month.selectedIndex].value + '.' + year.options[year.selectedIndex].text);
-dates.toNumber(); */
-
-function calculate_age(day, month, year)
-{
-    let today_date = new Date();
-    let today_year = today_date.getFullYear();
-    let today_month = today_date.getMonth();
-    let today_day = today_date.getDate();
-    let age = today_year - year;
-
-    if ( today_month < (month - 1))
+    if ( todayMonth < (month - 1))
     {
         age--;
     }
-    if (((month - 1) == today_month) && (today_day < day))
+    if (((month - 1) == todayMonth) && (todayDay < day))
     {
         age--;
     }
-    console.log(today_date);
+    return age;
+}
+
+calculateAge(day, month, year);
+
+if(age >= 18 && age <= 35) {
+        young.classList.add("block");
+    } else if(age >= 36 && age <= 45) {
+        young.classList.remove("block");
+        medium.classList.add("block");
+    } else if (age >46) {
+        medium.classList.remove("block");
+        old.classList.add("block");
+    } 
 }
 
 
-
-
-/* let young = document.querySelector(".top-row__text-1");
-let medium = document.querySelector(".top-row__text-2");
-let old = document.querySelector(".top-row__text-3");
-
-if(age >= 18 && age <= 45) {
-    young.classList.add("block");
-} else if(age >= 36 && age <= 45) {
-    young.classList.remove("block");
-    medium.classList.add("block");
-} else if (age >46) {
-    medium.classList.remove("block");
-    old.classList.add("block");
-} */

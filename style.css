@@ -176,7 +176,7 @@ button:hover {
 
 .question-buttons__button {
   border: none;
-  border-radius: 50px;
+  border-radius: 50px 50px 50px 50px;
   margin-bottom: 35px;
   padding: 20px 140px;
   background: -webkit-gradient(
@@ -1231,10 +1231,12 @@ select {
 
   .day {
     padding: 12px 80px;
+    background-color: #fff;
   }
 
   .month {
     padding: 12px 66px;
+    background-color: #fff;
   }
 
   .arrow-container:after {
@@ -1269,6 +1271,7 @@ select {
 
   .year {
     padding: 12px 82px;
+    background-color: #fff;
   }
   .call-container {
     padding-left: 60px;
